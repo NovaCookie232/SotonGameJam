@@ -18,6 +18,7 @@ public class movementBehaviour : MonoBehaviour {
 		{
 			keyBehaviour keyScript = key.GetComponent<keyBehaviour> ();
 			keyScript.collected = true;
+			key = null;
 		}
 	}
 	// Update is called once per frame

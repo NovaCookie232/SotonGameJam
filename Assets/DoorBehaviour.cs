@@ -9,22 +9,20 @@ public class DoorBehaviour : MonoBehaviour {
 	GameObject player;
 	Vector3 startingPos;
 	float movUp;
-	keyBehaviour keyScript;
+
 	// Use this for initialization
 	void Start () {
 		dooropen = false;
 		startingPos = transform.position;
 		key = GameObject.Find ("Key");
 		player = GameObject.Find ("Player");
-		keyScript = key.GetComponent<keyBehaviour> ();
+
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (keyScript.collected)
-		{
+		if (key == null) {
 			dooropen = true;
-			keyScript.collected = false;
 		}
 		if (transform.position.y > startingPos.y + 1.0f) 
 		{
